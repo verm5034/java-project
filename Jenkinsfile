@@ -7,15 +7,13 @@ pipeline
 	{
 	    steps {
 		git 'https://github.com/verm5034/java-project.git' 
-		sh 'ant'
 		sh 'ant -f test.xml -v'
 		junit 'reports/result.xml'   
 	         }
 	}   
 	stage('Build') 
 	{    
-	    steps {
-		sh 'ant'   
+	    steps { 
 		sh 'ant -f build.xml -v'
 	          }
 	}   	
