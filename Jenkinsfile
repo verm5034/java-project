@@ -18,6 +18,11 @@ pipeline
 		sh 'ant -f build.xml -v'
 	    }
 	}   	
+	stage('Deploy') {  
+	    steps {   
+		sh 'aws s3 cp dist/rectangle*.jar s3://devopsass9/'
+	    }
+	}
 	stage ('Report'){ 
 	    steps {   
 		withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'jenkins-AWS', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']])
