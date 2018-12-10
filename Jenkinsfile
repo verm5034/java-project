@@ -17,7 +17,8 @@ pipeline
 	   }
 	   stage('Deploy') {
 		   steps{
-		        sh 'echo deploy'	   
+		        sh 'echo deploy'
+			sh 'aws s3 dest/rectangle-$BUILD_NUMBER.jar s3://devopsass9/'
 		   }
 	   }
 	   
