@@ -5,7 +5,7 @@ pipeline
    {
 	   stage('Unit Test'){
 		   steps{
-			   git credentialsId: 'id', url: 'https://github.com/verm5034/java-project.git'
+			 
 			   sh 'ant -f test.xml -v'
 			   junit 'reports/result.xml'
 		   }
