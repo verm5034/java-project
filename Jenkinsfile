@@ -18,7 +18,7 @@ pipeline
 	   stage('Deploy') {
 		   steps{
 		        sh 'echo deploy'
-			 sh "s3Upload file:'rectangle*.jar', bucket:'devopsass9', path:'s3://devopsass9/' "
+			 sh "aws s3 file:'rectangle*.jar', bucket:'devopsass9', path:'s3://devopsass9/' "
 		   }
 	   }
 	   stage('Report') {
