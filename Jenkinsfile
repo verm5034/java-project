@@ -18,7 +18,7 @@ pipeline
 	   stage('Deploy') {
 		   steps{
 		        sh 'echo deploy'
-			 sh 'aws s3 cp dist/rectangle*.jar s3://devopsass9/' 
+			 sh 'aws s3 cp dist/rectangle-$BUILD_NUMBER.jar s3://devopsass9/' 
 		   }
 	   }
 	   stage('Report') {
